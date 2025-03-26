@@ -95,20 +95,14 @@
      {"protocol": "dns", "action": "hijack-dns"},
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
-     {"rule_set": "geosite-private", "outbound": "🎯 全球直连"},     
+     {"rule_set": "geosite-private", "outbound": "🎯 全球直连"},
+     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},     
 
      {"rule_set": "geosite-chat", "outbound": "🤖 OpenAI"},
      {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft" }, 
 
      {"rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连"},
-     {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"},
-
-     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
-     {"domain": ["", "", "", ""], "outbound": "🎯 全球直连"},
-     {"domain_suffix": ["", "", "", ""], "outbound": "🎯 全球直连"},
-     {"domain_keyword": ["", "", "", ""], "outbound": "🎯 全球直连"},
-     {"ip_cidr": ["", "", "", ""], "outbound": "🎯 全球直连"},
-     {"domain": ["", "", "", ""], "outbound": "🚀 节点选择"}     
+     {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"}
    ],
     
    "rule_set": [
