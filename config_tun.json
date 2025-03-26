@@ -118,7 +118,7 @@
      {"domain": ["wogg.xxooo.cf", "wogg.333232.xyz", "woggpan.333232.xyz", "wogg.heshiheng.top", "www.wogg.one", "www.wogg.lol"], "outbound": "🎯 全球直连"},
      {"domain": ["123.666291.xyz", "mogg.5568.eu.org", "mo.91muou.icu", "mo.666291.xyz", "mo.muouso.fun"], "outbound": "🚀 节点选择"},
      {"domain": ["1.star2.cn", "xhww.net", "2xiaopan.fun", "erxiaofn.click", "erxiaofn.site", "www.xhww.net", "xiaoer.5568.eu.org", "wexfnw.999888456.xyz", "woss.fenwe.eu.org", "cj.jiexi.news", "baijia.885525.xyz", "wp.0v.fit"], "outbound": "🎯 全球直连"},
-     {"domain_suffix": ["cnb.cool", "ip-ddns.com", "dzmanga.com", "twmanga.com", "xgcartoon.com", "lincartoon.com"], "outbound": "🎯 全球直连"},
+     {"domain_suffix": ["cnb.cool", "ip-ddns.com", "dzmanga.com", "twmanga.com", "bzmanga.com", "xgcartoon.com", "lincartoon.com"], "outbound": "🎯 全球直连"},
      {"domain_keyword": ["libvio", "baozi"], "outbound": "🎯 全球直连"},
      {"ip_cidr": ["156.238.229.163", "103.45.162.207", "154.204.177.231", "89.213.49.249", "149.88.87.18"], "outbound": "🎯 全球直连"},
      {"domain_suffix": ["themoviedb.org", "tmdb.org", "thetvdb.com", "opensubtitles.com", "opensubtitles.com", "jable.tv", "javbus.com", "javdb.com", "avbase.net", "arzon.jp"], "outbound": "🚀 节点选择"},     
