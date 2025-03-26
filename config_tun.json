@@ -27,7 +27,7 @@
    [
      {"tag": "dns_direct", "address": "https://doh.pub/dns-query", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
      {"tag": "dns_proxy", "address": "https://dns.cloudflare.com/dns-query", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
-     {"tag": "defaultDns", "address": "180.168.255.118", "address_strategy": "ipv4_only", "detour": "🎯 全球直连"}   
+     {"tag": "defaultDns", "address": "223.5.5.5", "address_strategy": "ipv4_only", "detour": "🎯 全球直连"}   
    ],
    "rules": 
    [
