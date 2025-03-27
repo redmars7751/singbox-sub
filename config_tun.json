@@ -7,17 +7,17 @@
   "experimental": {
     "clash_api": {
       "external_controller": "192.168.2.10:9018",
-      "external_ui": "ui",
+      "external_ui": "/etc/sing-box/ui",
       "secret": "",
       "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🚀 节点选择",
       "default_mode": "rule"
     },
-    "cache_file": {
-      "enabled": true,
-      "path": "cache.db",
-      "store_fakeip": true,
-      "store_rdrc": true
+  "cache_file": {
+    "enabled": true,
+    "path": "/etc/sing-box/cache.db",      
+    "store_fakeip": true,
+    "store_rdrc": true
     }
   },
 
