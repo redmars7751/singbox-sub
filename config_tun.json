@@ -87,7 +87,7 @@
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 节点选择","🎯 全球直连"] },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "🎯 全球直连", "type": "direct" },
-    { "tag": "🚫 广告拦截", "type": "block" }
+    { "tag": "🚫 广告拦截", "type": "direct", "detour": "none" }
   ],
   
   "route": 
