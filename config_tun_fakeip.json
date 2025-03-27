@@ -21,8 +21,7 @@
     }
   },
 
- "dns":
- {
+ "dns": {
    "servers":
    [
      {"tag": "dns_direct", "address": "https://doh.pub/dns-query", "address_resolver": "dns_resolver", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
@@ -33,22 +32,20 @@
    ],
    "rules":
    [
-    {"clash_mode": "Direct", "server": "dns_direct"},
-    {"clash_mode": "Global", "server": "dns_proxy"},
-    {"rule_set": "geosite-ads", "server": "dns_refused"},
-    {"rule_set": "geosite-cn","server": "dns_direct"},
-    {"rule_set": "geosite-geolocation-!cn", "query_type": ["A", "AAAA"], "server": "dns_fakeip"},
-    {"rule_set": "geosite-geolocation-!cn", "query_type": ["CNAME"], "server": "dns_proxy"},
-    {"query_type": [ "A","AAAA","CNAME"], "invert": true, "server": "dns_refused", "action": "route-options", "disable_cache": true}
-  ],
+     {"rule_set": "geosite-ads", "server": "dns_refused"},
+     {"rule_set": "geosite-cn", "server": "dns_direct"},
+     {"rule_set": "geosite-geolocation-!cn", "query_type": ["A", "AAAA"], "server": "dns_fakeip"},
+     {"rule_set": "geosite-geolocation-!cn", "query_type": ["CNAME"], "server": "dns_proxy"}
+   ],
    "final": "dns_proxy",
    "strategy": "ipv4_only",
    "independent_cache": true,
    "fakeip": {
-       "enabled": true,
-       "inet4_range": "198.18.0.0/15"
-      }          
-},
+     "enabled": true,
+     "inet4_range": "198.18.0.0/15",
+     "inet6_range": "fc00::/18"       
+   }
+ },
 
 "inbounds": [
   {
@@ -109,8 +106,6 @@
    [
      {"action": "sniff"},
      {"protocol": "dns", "action": "hijack-dns"},
-     {"clash_mode": "direct", "outbound": "🎯 全球直连"},
-     {"clash_mode": "global", "outbound": "GLOBAL"},
      {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-ads", "outbound": "🚫 广告拦截"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
