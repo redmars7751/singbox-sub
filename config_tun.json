@@ -31,7 +31,7 @@
    ],
    "rules":
    [
-     {"rule_set": "geosite-ads", "server": "dns_refused"},
+     {"rule_set": "geosite-ads", "server": "dns_refused", "disable_cache": true},
      {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy" }
    ],
