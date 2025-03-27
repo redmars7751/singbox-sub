@@ -13,11 +13,10 @@
       "external_ui_download_detour": "🚀 节点选择",
       "default_mode": "rule"
     },
-  "cache_file": {
-    "enabled": true,
-    "path": "/etc/sing-box/cache.db",      
-    "store_fakeip": true,
-    "store_rdrc": true
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/sing-box/cache.db",
+      "store_fakeip": false
     }
   },
 
@@ -28,29 +27,18 @@
      {"tag": "dns_direct", "address": "https://doh.pub/dns-query", "address_resolver": "dns_resolver", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
      {"tag": "dns_proxy", "address": "https://dns.cloudflare.com/dns-query", "address_resolver": "dns_resolver", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
      {"tag": "dns_resolver", "address": "223.5.5.5", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
-     {"tag": "dns_success", "address": "rcode://success"},
-     {"tag": "dns_refused", "address": "rcode://refused"},
-     {"tag": "dns_fakeip", "address": "fakeip"}      
+     {"tag": "dns_refused", "address": "rcode:NOERROR"},
+     {"tag": "dns_fakeip", "address": "fakeip"}
    ],
    "rules": 
    [
-     {"outbound": "any", "server": "dns_resolver", "disable_cache": true},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "dns_proxy"},
-     {"rule_set": "geosite-category-ads-all", "server": "dns_refused"},
-     {"rule_set": "geosite-cn","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "query_type": ["A", "AAAA"], "server": "dns_fakeip"},
-     {"rule_set": "geosite-geolocation-!cn", "query_type": ["CNAME"], "server": "dns_proxy"},
-     {"query_type": [ "A","AAAA","CNAME"], "invert": true, "server": "dns_refused", "action": "route-options", "disable_cache": true}
+     {"rule_set": "geosite-ads", "server": "dns_refused"},
+     {"rule_set": "geosite-cn","server": "dns_direct"}
    ],
    "final": "dns_proxy",
-   "strategy": "ipv4_only",
-   "independent_cache": true,
-   "fakeip": {
-       "enabled": true,
-       "inet4_range": "198.18.0.0/15",
-       "inet6_range": "fc00::/18"
-   }
+   "strategy": "ipv4_only"
 },
 
 "inbounds": [
@@ -101,7 +89,7 @@
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 节点选择","🎯 全球直连"] },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "🎯 全球直连", "type": "direct" },
-    { "tag": "🚫 广告拦截", "type": "reject" }
+    { "tag": "🚫 广告拦截", "type": "block" }
   ],
   
   "route": 
@@ -115,7 +103,7 @@
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
-     {"rule_set": "geosite-category-ads-all", "outbound": "🚫 广告拦截"},
+     {"rule_set": "geosite-ads", "outbound": "🚫 广告拦截"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
 
      {"rule_set": "geosite-chat", "outbound": "🤖 OpenAI"},
@@ -142,7 +130,7 @@
    ],
     
    "rule_set": [
-    { "tag": "geosite-category-ads-all", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs", "download_detour": "🚫 广告拦截" },
+    { "tag": "geosite-ads", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs", "download_detour": "🚀 节点选择" },
     { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs", "download_detour": "🚀 节点选择" },
     { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "🚀 节点选择" },
     { "tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs", "download_detour": "🚀 节点选择" },
