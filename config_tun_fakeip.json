@@ -27,12 +27,12 @@
      {"tag": "dns_direct", "address": "https://doh.pub/dns-query", "address_resolver": "dns_resolver", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
      {"tag": "dns_proxy", "address": "https://dns.cloudflare.com/dns-query", "address_resolver": "dns_resolver", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
      {"tag": "dns_resolver", "address": "udp://223.5.5.5", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
-     {"tag": "dns_refused", "address": "local"}
+     {"tag": "dns_refused", "address": "local"},
      {"tag": "dns_fakeip", "address": "fakeip"}
    ],
    "rules":
    [
-     {"domain_suffix": ["doh.pub", "dns.alidns.com", "dns.cloudflare.com", "dns.google"], "server": "dns_resolver"},
+     {"outbound": "any", "server": "dns_resolver", "disable_cache": true},
      {"rule_set": "geosite-ads", "server": "dns_refused", "disable_cache": true},
      {"rule_set": "geosite-cn", "server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "query_type": ["A", "AAAA"], "server": "dns_fakeip"},
