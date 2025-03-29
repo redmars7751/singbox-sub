@@ -42,32 +42,33 @@
    "strategy": "ipv4_only"
 },
 
-"inbounds": [
-  {
-    "type": "tun",
-    "address": "172.19.0.1/30",
-    "mtu": 1492,
-    "auto_route": true,
-    "auto_redirect": true,
-    "strict_route": true,
-    "stack": "mixed",
-    "platform": {
-      "http_proxy": {
-        "enabled": true,
-        "server": "192.168.2.10",
-        "server_port": 7890
-      }
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "mtu": 1492,
+      "auto_route": true,
+      "auto_redirect": true,
+      "strict_route": true,
+      "stack": "mixed"
+    },
+    {
+      "type": "http",
+      "listen": "192.168.2.10",
+      "listen_port": 7890,
+      "udp_timeout": 30,
+      "sniff": true,
+      "users": []
+    },
+    {
+      "type": "socks",
+      "listen": "192.168.2.10",
+      "listen_port": 7891,
+      "udp_timeout": 30,
+      "sniff": true,
+      "users": []
     }
-  },
-  {
-    "type": "socks",
-    "listen": "192.168.2.10",
-    "listen_port": 7891,
-    "udp_timeout": 30,    
-    "sniff": true,
-    "users": []
-  }
-],
+  ],
 
   "outbounds": [
     { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["♻️ 自动选择", "🇰🇷 韩国节点", "🇺🇲 美国节点", "🇭🇰 香港节点", "🇯🇵 日本节点", "✈️ 手动切换", "🎯 全球直连"] },
