@@ -56,8 +56,6 @@
       "type": "http",
       "listen": "192.168.2.10",
       "listen_port": 7890,
-      "udp_timeout": 30,
-      "sniff": true,
       "users": []
     },
     {
@@ -65,7 +63,6 @@
       "listen": "192.168.2.10",
       "listen_port": 7891,
       "udp_timeout": 30,
-      "sniff": true,
       "users": []
     }
   ],
