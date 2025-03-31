@@ -73,6 +73,13 @@
       "listen_port": 7891,
       "udp_timeout": 30,
       "users": []
+    },
+    {
+      "type": "mixed",
+      "listen": "192.168.2.10",
+      "listen_port": 7892,
+      "udp_timeout": 30,
+      "users": []
     }
   ],
 
