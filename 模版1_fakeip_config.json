@@ -31,7 +31,7 @@
    ],
    "rules":
    [
-     {"rule_set": "geosite-ads",  "action": "predefined", "rcode": "NOERROR"},
+     {"rule_set": "geosite-ads", "action": "predefined", "rcode": "NOERROR"},
      {"clash_mode": "direct","server": "dns_direct"},
      {"clash_mode": "global","server": "dns_proxy"},
 
