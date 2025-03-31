@@ -32,9 +32,7 @@
    ],
    "rules":
    [
-     {"outbound": "any", "server": "dns_resolver", "disable_cache": true},
      {"rule_set": "geosite-ads", "server": "dns_refused"},
-
      {"clash_mode": "direct","server": "dns_direct"},
      {"clash_mode": "global","server": "dns_proxy"},
 
