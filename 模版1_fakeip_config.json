@@ -24,10 +24,11 @@
  "dns": {
    "servers":
    [
-     {"tag": "dns_direct", "address": "https://223.5.5.5/dns-query", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
-     {"tag": "dns_proxy", "address": "https://1.1.1.1/dns-query", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
-     {"tag": "dns_refused", "address": "local"},
-     {"tag": "dns_fakeip", "address": "fakeip"}
+     {"tag": "dns_direct","type": "https", "server": "https://doh.pub/dns-query", "domain_resolver": "dns_resolver", "detour": "🎯 全球直连"},
+     {"tag": "dns_proxy", "type": "https","server": "https://dns.cloudflare.com/dns-query", "domain_resolver": "dns_resolver", "detour": "🚀 节点选择"},
+     {"tag": "dns_direct","type": "udp", "server": "114.114.114.114", "detour": "🎯 全球直连"},     
+     {"tag": "dns_refused", "type": "local"},
+     {"tag": "dns_fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
    ],
    "rules":
    [
@@ -37,19 +38,14 @@
      {"clash_mode": "direct","server": "dns_direct"},
      {"clash_mode": "global","server": "dns_proxy"},
 
-     {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip"},
+     {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "dns_fakeip"},
      {"rule_set": "geosite-cn", "server": "dns_direct"},
      {"type": "logical", "mode": "and", "rules": [{"rule_set": "geosite-geolocation-!cn", "invert": true}, {"rule_set": "geoip-cn"}], "server": "dns_proxy", "client_subnet": "114.114.114.114/24"},
-     {"query_type": ["A", "AAAA"], "server": "fakeip"}
+     {"query_type": ["A", "AAAA"], "server": "dns_fakeip"}
    ],
    "final": "dns_proxy",
    "strategy": "ipv4_only",
-   "independent_cache": true,
-   "fakeip": {
-     "enabled": true,
-     "inet4_range": "198.18.0.0/15",
-     "inet6_range": "fc00::/18"       
-   }
+   "independent_cache": true
  },
 
   "inbounds": [
