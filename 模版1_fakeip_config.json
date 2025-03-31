@@ -37,11 +37,10 @@
      {"clash_mode": "direct","server": "dns_direct"},
      {"clash_mode": "global","server": "dns_proxy"},
 
-     {"rule_set": "geosite-cn", "server": "dns_direct"},     
      {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip"},
      {"rule_set": "geosite-cn", "server": "dns_direct"},
      {"type": "logical", "mode": "and", "rules": [{"rule_set": "geosite-geolocation-!cn", "invert": true}, {"rule_set": "geoip-cn"}], "server": "dns_proxy", "client_subnet": "114.114.114.114/24"},
-     {"query_type": ["A", "AAAA"], "server": "fakeip"}     
+     {"query_type": ["A", "AAAA"], "server": "fakeip"}
    ],
    "final": "dns_proxy",
    "strategy": "ipv4_only",
