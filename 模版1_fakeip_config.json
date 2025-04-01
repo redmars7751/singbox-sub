@@ -24,8 +24,8 @@
  "dns": {
    "servers":
    [
-     {"tag": "dns_direct", "type": "https", "server": "https://doh.pub/dns-query", "domain_resolver": "dns_resolver"},
-     {"tag": "dns_proxy", "type": "https", "server": "https://dns.cloudflare.com/dns-query", "domain_resolver": "dns_resolver", "detour": "🚀 节点选择"},
+     {"tag": "dns_direct", "type": "https", "server": "doh.pub", "domain_resolver": "dns_resolver"},
+     {"tag": "dns_proxy", "type": "https", "server": "dns.cloudflare.com", "domain_resolver": "dns_resolver", "detour": "🚀 节点选择"},
      {"tag": "dns_resolver", "type": "tls", "server": "1.12.12.12", "server_port": 853},
      {"tag": "dns_fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"},
      {"tag": "local", "type": "local"}
