@@ -108,8 +108,6 @@
    [
      {"action": "sniff"},
      {"protocol": "dns", "action": "hijack-dns"},
-     {"clash_mode": "Direct", "outbound": "🎯 全球直连"},
-     {"clash_mode": "Global", "outbound": "GLOBAL"},
      {"rule_set": "geosite-ads", "action": "reject"},
      {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
