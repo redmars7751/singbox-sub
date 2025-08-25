@@ -100,7 +100,7 @@
   
   "route": 
  {
-   "default_domain_resolver": {"server": "dns_resolver", "rewrite_ttl": 60, "client_subnet": "114.114.114.114/24"},
+   "default_domain_resolver": {"server": "dns_resolver", "rewrite_ttl": 60, "client_subnet": "223.5.5.5/24"},
    "auto_detect_interface": true,
    "final": "🐠 漏网之鱼",
    "rules": 
