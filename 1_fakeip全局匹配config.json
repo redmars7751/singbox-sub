@@ -35,7 +35,7 @@
      {"clash_mode": "Direct","server": "dns_direct"},
      {"clash_mode": "Global","server": "dns_fakeip"},
      {"rule_set": "geosite-cn", "server": "dns_direct"},
-     {"type": "logical", "mode": "and", "rules": [{ "rule_set": "geolocation-!cn", "invert": true }, { "rule_set": "geoip-cn" }], "server": "dns_proxy", "client_subnet": "223.5.5.5"},
+     {"type": "logical", "mode": "and", "rules": [{ "rule_set": "geosite-geolocation-!cn", "invert": true }, { "rule_set": "geoip-cn" }], "server": "dns_proxy", "client_subnet": "223.5.5.5"},
      {"query_type": ["A", "AAAA"], "server": "dns_fakeip", "rewrite_ttl": 1}     
    ],
    "final": "dns_proxy",
@@ -156,8 +156,7 @@
     { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "🚀 节点选择" },
     { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🚀 节点选择" },
     { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🚀 节点选择" },
-    { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "🚀 节点选择" },
-    { "tag": "geolocation-!cn", "type": "remote", "format": "binary", "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "🚀 节点选择" }     
+    { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "🚀 节点选择" }
   ]
  }
 }
