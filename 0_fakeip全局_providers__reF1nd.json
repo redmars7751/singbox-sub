@@ -3,12 +3,6 @@
     {
       "type": "remote",
       "tag": "机场1",
-      "health_check": {
-        "enabled": false,
-        "url": "https://www.gstatic.com/generate_204",
-        "interval": "10m",
-        "timeout": "3s"
-      },
       "url": "",
       "download_detour": "🎯 全球直连",
       "update_interval": "24h"
@@ -16,12 +10,6 @@
     {
       "type": "remote",
       "tag": "机场2",
-      "health_check": {
-        "enabled": false,
-        "url": "https://www.gstatic.com/generate_204",
-        "interval": "10m",
-        "timeout": "3s"
-      },
       "url": "",
       "download_detour": "🎯 全球直连",
       "update_interval": "24h"
