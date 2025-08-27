@@ -4,15 +4,13 @@
       "type": "remote",
       "tag": "机场1",
       "url": "",
-      "download_detour": "🎯 全球直连",
-      "update_interval": "24h"
+      "download_detour": "🎯 全球直连"
     },
     {
       "type": "remote",
       "tag": "机场2",
       "url": "",
-      "download_detour": "🎯 全球直连",
-      "update_interval": "24h"
+      "download_detour": "🎯 全球直连"
     }    
   ],
 
