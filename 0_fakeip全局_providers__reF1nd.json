@@ -95,7 +95,7 @@
      {"rule_set": ["geoip-cn"], "outbound": "🎯 全球直连"}
    ],
 
-   "final": "🐠 漏网之鱼",
+   "final": "🚀 节点选择",
    "default_domain_resolver": "dns_direct",
    "auto_detect_interface": true,
 
@@ -145,7 +145,6 @@
     { "tag": "📲 Telegram", "type": "selector", "outbounds": ["🚀 节点选择", "🇰🇷 韩国节点", "🇺🇲 美国节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "✈️ 手动切换"] },
     
     { "tag": "✈️ 手动切换", "type": "selector", "providers": ["机场1", "机场2"] },
-    { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 节点选择", "🎯 全球直连"] },    
     { "tag": "GLOBAL", "type": "selector", "providers": ["机场1", "机场2"] },    
     { "tag": "🎯 全球直连", "type": "direct", "domain_resolver": "dns_direct" }
   ]
