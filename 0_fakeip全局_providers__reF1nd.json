@@ -2,7 +2,7 @@
   "providers": [
     {
       "type": "remote",
-      "tag": "provider1",
+      "tag": "机场1",
       "health_check": {
         "enabled": false,
         "url": "https://www.gstatic.com/generate_204",
@@ -15,7 +15,7 @@
     },
     {
       "type": "remote",
-      "tag": "provider2",
+      "tag": "机场2",
       "health_check": {
         "enabled": false,
         "url": "https://www.gstatic.com/generate_204",
@@ -144,21 +144,21 @@
  
   "outbounds": [
     { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["♻️ 自动选择", "🇰🇷 韩国节点", "🇺🇲 美国节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "✈️ 手动切换", "🎯 全球直连"] },
-    { "tag": "♻️ 自动选择", "type": "urltest", "providers": ["provider1", "provider2"], "exclude": "(网站|地址|剩余|过期|时间|有效|流量|套餐|重置)", "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50 },
+    { "tag": "♻️ 自动选择", "type": "urltest", "providers": ["机场1", "机场2"], "exclude": "(网站|地址|剩余|过期|时间|有效|流量|套餐|重置)", "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50 },
 
-    { "tag": "🇰🇷 韩国节点", "type": "selector", "providers": ["provider1", "provider2"], "include": "(🇰🇷|KR|kr|korea|韩国|韩)" },
-    { "tag": "🇺🇲 美国节点", "type": "selector", "providers": ["provider1", "provider2"], "include": "(🇺🇸|US|us|United States|美国|美)" },
-    { "tag": "🇯🇵 日本节点", "type": "selector", "providers": ["provider1", "provider2"], "include": "(🇯🇵|JP|jp|Japan|日本|日)" },
-    { "tag": "🇸🇬 新加坡节点", "type": "selector", "providers": ["provider1", "provider2"], "include": "(🇸🇬|SP|sp|singapore|新加坡|新)" },
+    { "tag": "🇰🇷 韩国节点", "type": "selector", "providers": ["机场1", "机场2"], "include": "(🇰🇷|KR|kr|korea|韩国|韩)" },
+    { "tag": "🇺🇲 美国节点", "type": "selector", "providers": ["机场1", "机场2"], "include": "(🇺🇸|US|us|United States|美国|美)" },
+    { "tag": "🇯🇵 日本节点", "type": "selector", "providers": ["机场1", "机场2"], "include": "(🇯🇵|JP|jp|Japan|日本|日)" },
+    { "tag": "🇸🇬 新加坡节点", "type": "selector", "providers": ["机场1", "机场2"], "include": "(🇸🇬|SP|sp|singapore|新加坡|新)" },
 
     { "tag": "🤖 OpenAI", "type": "selector", "outbounds": ["🚀 节点选择", "🇰🇷 韩国节点", "🇺🇲 美国节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "✈️ 手动切换"], "default":"🇺🇲 美国节点" },
     { "tag": "🎵 TikTok", "type": "selector", "outbounds": ["🚀 节点选择", "🇰🇷 韩国节点", "🇺🇲 美国节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "✈️ 手动切换"], "default":"🇺🇲 美国节点" },    
     { "tag": "📹 YouTube", "type": "selector", "outbounds": ["🚀 节点选择", "🇰🇷 韩国节点", "🇺🇲 美国节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "✈️ 手动切换"] },
     { "tag": "📲 Telegram", "type": "selector", "outbounds": ["🚀 节点选择", "🇰🇷 韩国节点", "🇺🇲 美国节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "✈️ 手动切换"] },
     
-    { "tag": "✈️ 手动切换", "type": "selector", "providers": ["provider1", "provider2"], "exclude": "(网站|地址|剩余|过期|时间|有效|流量|套餐|重置)" },
+    { "tag": "✈️ 手动切换", "type": "selector", "providers": ["机场1", "机场2"], "exclude": "(网站|地址|剩余|过期|时间|有效|流量|套餐|重置)" },
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 节点选择", "🎯 全球直连"] },    
-    { "tag": "GLOBAL", "type": "selector", "providers": ["provider1", "provider2"], "exclude": "(网站|地址|剩余|过期|时间|有效|流量|套餐|重置)" },    
+    { "tag": "GLOBAL", "type": "selector", "providers": ["机场1", "机场2"], "exclude": "(网站|地址|剩余|过期|时间|有效|流量|套餐|重置)" },    
     { "tag": "🎯 全球直连", "type": "direct", "domain_resolver": "dns_direct" }
   ]
 }
