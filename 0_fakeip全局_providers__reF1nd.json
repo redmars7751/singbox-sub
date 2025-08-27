@@ -11,8 +11,7 @@
       },
       "url": "",
       "download_detour": "🎯 全球直连",
-      "update_interval": "24h",
-      "override_dialer": {}
+      "update_interval": "24h"
     },
     {
       "type": "remote",
@@ -25,8 +24,7 @@
       },
       "url": "",
       "download_detour": "🎯 全球直连",
-      "update_interval": "24h",
-      "override_dialer": {}
+      "update_interval": "24h"
     }    
   ],
 
