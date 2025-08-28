@@ -63,7 +63,7 @@
    "rules": 
    [
      {"action": "sniff", "sniffer": ["dns", "http", "tls", "quic"]},
-     {"type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "action": "hijack-dns"},
+     {"port": 53, "action": "hijack-dns"},
      {"clash_mode": "Direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "Global", "outbound": "GLOBAL"},
      {"rule_set": "geosite-ads", "action": "reject"},
