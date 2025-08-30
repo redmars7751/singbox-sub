@@ -126,7 +126,8 @@
     { "tag": "GLOBAL", "type": "selector", "providers": ["机场1", "机场2"] },    
     { "tag": "🎯 全球直连", "type": "direct", "domain_resolver": "dns_direct" }
   ],
-     "endpoints": [
+
+   "endpoints": [
     {
       "type": "wireguard",
       "tag": "wg-ep",
