@@ -102,7 +102,8 @@
  },
 
   "inbounds": [
-    { "type": "tun", "address": "172.19.0.1/30", "mtu": 9000, "stack": "mixed", "auto_route": true, "auto_redirect": true, "strict_route": true, "platform": { "http_proxy": { "enabled": true, "server": "127.0.0.1", "server_port": 7890 } } },
+    { "type": "tun", "address": "172.19.0.1/30", "mtu": 9000, "stack": "mixed", "auto_route": true, "auto_redirect": true, "strict_route": true, "platform": { "http_proxy": { "enabled": true, "server": "127.0.0.1", "server_port": 8080 } } },
+    { "type": "http", "listen": "0.0.0.0", "listen_port": 7890 },
     { "type": "socks", "listen": "0.0.0.0", "listen_port": 7891 },
     { "type": "mixed", "listen": "0.0.0.0", "listen_port": 7892 }
   ],
